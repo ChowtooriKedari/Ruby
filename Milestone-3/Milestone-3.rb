@@ -53,12 +53,8 @@ class TodosList
   end
 
   def to_displayable_list
-    increment_value = 0
     todos_array = []
-    @todos.each do |name|
-      todos_array[increment_value] = name.to_displayable_string
-      increment_value = increment_value + 1
-    end
+    todos_array = @todos.map{ |todo_list| todo_list.to_displayable_string}
     return todos_array.join("\n")
   end
 end
